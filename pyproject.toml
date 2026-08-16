@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "offload-lora"
+version = "0.1.0"
+description = "Fine-tune huge models on a single weak GPU via CPU<->GPU offload and LoRA."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Mike Koci (EliseArt)" }]
+keywords = ["llm", "fine-tuning", "lora", "offload", "pipeline", "training"]
+
+[project.urls]
+Homepage = "https://elise-dev.web.app"
+dependencies = [
+    "torch>=2.0",
+    "transformers>=4.34",
+    "datasets>=2.0",
+    "accelerate>=0.20",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+offload-train = "offload_lora.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["offload_lora*"]
