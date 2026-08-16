@@ -19,6 +19,7 @@ dependencies = [
     "transformers>=4.34",
     "datasets>=2.0",
     "accelerate>=0.20",
+    "safetensors>=0.4",
 ]
 
 [project.optional-dependencies]

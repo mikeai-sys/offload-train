@@ -53,6 +53,17 @@ pip install .
 
 Then `import offload_lora` works, and the `offload-train` CLI is available.
 
+> **Note (PEP 668 / externally-managed Python).** On newer Ubuntu/Debian system
+> Python a bare `pip install` may be refused. Either install inside a virtualenv:
+> ```bash
+> python -m venv .venv && source .venv/bin/activate && pip install -e .
+> ```
+> or, if you intentionally install to the user environment, add
+> `--break-system-packages`:
+> ```bash
+> pip install -e . --break-system-packages
+> ```
+
 ---
 
 # Usage
